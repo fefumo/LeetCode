@@ -9,8 +9,8 @@ class Solution(object):
         if x == 1:
             return 1
 
-        mi = -sys.maxint - 1
-        ma = sys.maxint
+        mi = 0
+        ma = x
 
         while mi <= ma:
             mid = (mi + ma) // 2

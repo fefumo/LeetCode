@@ -5,36 +5,20 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        if len(nums) == 1:
-            if nums[0] == target:
-                return 0
-            else:
-                return -1
-
+        
         start = 0
         end = len(nums) - 1
-
-        middle = (start + end) // 2
-
-        if nums[middle] == target:
-            return middle
         
-        elif nums[middle] > target:
-            return self.binary(nums, start, middle-1, target)
+        while start <= end:
+            middle = (start + end) // 2
 
-        elif nums[middle] < target:
-            return self.binary(nums, middle+1, end, target)
-    
-    def binary(self, nums, start, end, target):
-        middle = (start + end) // 2
-        if start > end:
-            return -1
+            if nums[middle] == target:
+                return middle
 
-        if nums[middle] == target:
-            return middle
-        
-        elif nums[middle] > target:
-            return self.binary(nums, start, middle-1, target)
+            elif nums[middle] > target:
+                end = middle - 1
 
-        elif nums[middle] < target:
-            return self.binary(nums, middle+1, end, target)
+            elif nums[middle] < target:
+                start  = middle + 1
+                
+        return -1

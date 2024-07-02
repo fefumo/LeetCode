@@ -6,14 +6,25 @@
 #         self.right = right
 class Solution(object):
     def __init__(self):
-        self.arr = []    
+        self.res = []    
     def preorderTraversal(self, root):
         """
         :type root: TreeNode
         :rtype: List[int]
         """
-        if root:
-            self.arr.append(root.val)
-            self.preorderTraversal(root.left)
-            self.preorderTraversal(root.right)
-        return self.arr
+        # if root:
+        #     self.arr.append(root.val)
+        #     self.preorderTraversal(root.left)
+        #     self.preorderTraversal(root.right)
+        # return self.arr
+        stack = []
+        stack.append(root)
+        
+        while len(stack) > 0:
+            node = stack.pop()
+            if node:
+                self.res.append(node.val)
+                stack.append(node.right)
+                stack.append(node.left)
+        
+        return self.res

@@ -17,8 +17,8 @@ class Solution(object):
                     while i < n and formula[i].isdigit():
                         i += 1
                     multiplier = int(formula[i_start:i] or 1)
-                    for name, count in top.items():
-                        stack[-1][name] += count * multiplier
+                    for key, value in top.items():
+                        stack[-1][key] += value * multiplier
                 else:
                     i_start = i
                     i += 1

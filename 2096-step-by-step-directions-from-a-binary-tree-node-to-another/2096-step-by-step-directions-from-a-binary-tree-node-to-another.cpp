@@ -67,15 +67,15 @@ public:
         return false; 
     }
 
-    std::string swapDirections(const std::string& path) {
-        std::string swappedPath = path;
-        for (char& ch : swappedPath) {
-            if (ch == 'L') {
-                ch = 'R';
-            } else if (ch == 'R') {
-                ch = 'L';
-            }
-        }
-        return swappedPath;
-    }
+    //std::string swapDirections(const std::string& path) {
+    //    std::string swappedPath = path;
+    //    for (char& ch : swappedPath) {
+    //        if (ch == 'L') {
+    //            ch = 'R';
+    //        } else if (ch == 'R') {
+    //            ch = 'L';
+    //        }
+    //    }
+    //    return swappedPath;
+    //}
 };
